@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editable</title>
+    <link href="./bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="./bootstrap-table.min.css" rel="stylesheet" type="text/css" />
+    <script src="./jquery.min.js"></script>
+    <script src="./bootstrap.bundle.min.js"></script>
+    <link href="../dist/inputs-ext/wysihtml5/bootstrap-wysihtml5-0.0.2/bootstrap-wysihtml5-0.0.2.css" rel="stylesheet" type="text/css" />
+    <script src="../dist/inputs-ext/wysihtml5/bootstrap-wysihtml5-0.0.2/wysihtml5-0.3.0.js"></script>
+    <script src="../dist/inputs-ext/wysihtml5/bootstrap-wysihtml5-0.0.2/bootstrap-wysihtml5-0.0.2.js"></script>
+    <link href="../dist/bootstrap4-editable/css/bootstrap-editable.css" rel="stylesheet" type="text/css" />
+    <script src="../dist/bootstrap4-editable/js/bootstrap-editable.js"></script>
+    <style>
+        .test{
+            /*border: none;*/
+        }
+    </style>
+</head>
+<body>
+<a id="username" data-type="ContentEditable" data-mode="inline"  >111</a>
+<a id="username2" data-type="textarea" data-mode="inline" data-value="2222" >222</a>
+<button id="testBtn" class="test">click me</button>
+<script>
+    $(function() {
+        $('#username, #username2').editable({
+            pk: 1,
+            url: '/post',
+            title: 'Enter comments',
+            tpl: '<input class="test" />'
+        });
+        console.log($('#username, #username2').editable('getValue'))
+
+
+        $("#testBtn").on('click.haha', function() {
+           alert('sddddd')
+        });
+    });
+</script>
+</body>
+</html>
