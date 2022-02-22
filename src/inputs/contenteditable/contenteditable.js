@@ -1,7 +1,7 @@
 /**
-Text input
+input like DIV contentEditable attribute
 
-@class text
+@class ContentEditable
 @extends abstractinput
 @final
 @example
@@ -29,6 +29,8 @@ $(function(){
            this.renderClear();
            this.setClass();
            this.setAttr('placeholder');
+           this.blur();
+           this.hideButtons();
         },
 
         activate: function() {
@@ -105,7 +107,24 @@ $(function(){
         clear: function() {
            this.$clear.hide();
            this.$input.val('').focus();
+        },
+
+        // blur event submit data
+        blur: function() {
+            var that = this;
+            this.$input.blur(function(){
+                // that.$form.submit($.proxy(this.submit, this))
+                // when lost focus do submit event
+                that.$input.closest("form").submit();
+
+                console.log(that)
+            });
+        },
+        //
+        hideButtons: function () {
+            console.log(this)
         }
+
     });
 
     ContentEditable.defaults = $.extend({}, $.fn.editabletypes.abstractinput.defaults, {
@@ -113,7 +132,7 @@ $(function(){
         @property tpl
         @default <input type="text">
         **/
-        tpl: '<input type="text">',
+        tpl: '<input type="text" class="contentEditable">',
         /**
         Placeholder attribute of input. Shown when input is empty.
 
