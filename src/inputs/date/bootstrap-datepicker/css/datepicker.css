@@ -447,3 +447,11 @@
   margin-left: -5px;
   margin-right: -5px;
 }
+
+.popover-body{width: 305px;}
+.editableform .control-group{line-height: 40px;}
+.editable-cancel{
+  color: #333333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
