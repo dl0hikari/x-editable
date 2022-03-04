@@ -131,11 +131,13 @@ Editableform based on Twitter Bootstrap 3
                     }
                 }, this));
 
-            // set $div $form $input css style
-            this.$div.css({'width': '100%'})
-                .parent().css({'width': '100%'});
+            // Only the type is ContentEditble,  set $div & $form & $input css style  fixed by alex 2022.3.5
+            if(this.options && this.options.type === 'ContentEditable') {
+                this.$div.css({'width': '100%'})
+                    .parent().css({'width': '100%'});
 
-            this.$form.find('.form-group, .editable-input, .contentEditable').css({'width': '100%'});
+                this.$form.find('.form-group, .editable-input, .contentEditable').css({'width': '100%'});
+            }
         },
 
         submit: function(e) {
@@ -244,6 +246,33 @@ Editableform based on Twitter Bootstrap 3
                     this.showForm();
                 }, this));
         },
+
+
+        error: function(msg) {
+            var $group = this.$form.find('.control-group'),
+                $block = this.$form.find('.editable-error-block'),
+                lines;
+
+            if(msg === false) {
+                $group.removeClass($.fn.editableform.errorGroupClass);
+                $block.removeClass($.fn.editableform.errorBlockClass).empty().hide();
+            } else {
+                //convert newline to <br> for more pretty error display
+
+                // Only the type is ContentEditable, add additional css.  fixed by alex 2022.3.4
+                $block.css({lineHeight: '14px', margin: '0 0 10px 0'});
+
+                if(msg) {
+                    lines = (''+msg).split('\n');
+                    for (var i = 0; i < lines.length; i++) {
+                        lines[i] = $('<div>').text(lines[i]).html();
+                    }
+                    msg = lines.join('<br>');
+                }
+                $group.addClass($.fn.editableform.errorGroupClass);
+                $block.addClass($.fn.editableform.errorBlockClass).html(msg).show();
+            }
+        }
     });
 
     //buttons

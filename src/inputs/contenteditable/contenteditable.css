@@ -1,1 +1,5 @@
-
+.contentEditable{
+    border: none;
+    background: transparent;
+    text-align: center;
+}

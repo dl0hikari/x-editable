@@ -26,11 +26,11 @@ $(function(){
 
     $.extend(ContentEditable.prototype, {
         render: function() {
-           this.renderClear();
+           // this.renderClear();
            this.setClass();
            this.setAttr('placeholder');
+           this.computeInputWidth();
            this.blur();
-           this.hideButtons();
         },
 
         activate: function() {
@@ -112,17 +112,17 @@ $(function(){
         // blur event submit data
         blur: function() {
             var that = this;
-            this.$input.blur(function(){
+            this.$input.blur(function(e){
                 // that.$form.submit($.proxy(this.submit, this))
                 // when lost focus do submit event
+                e.stopPropagation();
+                e.preventDefault();
                 that.$input.closest("form").submit();
-
-                console.log(that)
             });
         },
         //
-        hideButtons: function () {
-            console.log(this)
+        computeInputWidth: function () {
+            // console.log('computeInputWidth', this.input)
         }
 
     });

@@ -3,3 +3,4 @@ test/instrumented/
 *.nupkg
 *.orig
 .idea
+/dist/
