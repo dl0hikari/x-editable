@@ -1,7 +1,7 @@
 /**
-input like DIV contentEditable attribute
+input like DIV DecorativeInput attribute
 
-@class ContentEditable
+@class DecorativeInput
 @extends abstractinput
 @final
 @example
@@ -18,13 +18,13 @@ $(function(){
 (function ($) {
     "use strict";
 
-    var ContentEditable = function (options) {
-        this.init('ContentEditable', options, ContentEditable.defaults);
+    var DecorativeInput = function (options) {
+        this.init('DecorativeInput', options, DecorativeInput.defaults);
     };
 
-    $.fn.editableutils.inherit(ContentEditable, $.fn.editabletypes.abstractinput);
+    $.fn.editableutils.inherit(DecorativeInput, $.fn.editabletypes.abstractinput);
 
-    $.extend(ContentEditable.prototype, {
+    $.extend(DecorativeInput.prototype, {
         render: function() {
            // this.renderClear();
            this.setClass();
@@ -127,12 +127,12 @@ $(function(){
 
     });
 
-    ContentEditable.defaults = $.extend({}, $.fn.editabletypes.abstractinput.defaults, {
+    DecorativeInput.defaults = $.extend({}, $.fn.editabletypes.abstractinput.defaults, {
         /**
         @property tpl
         @default <input type="text">
         **/
-        tpl: '<input type="text" class="contentEditable">',
+        tpl: '<input type="text" class="decorativeInput">',
         /**
         Placeholder attribute of input. Shown when input is empty.
 
@@ -152,6 +152,6 @@ $(function(){
         clear: true
     });
 
-    $.fn.editabletypes.ContentEditable = ContentEditable;
+    $.fn.editabletypes.DecorativeInput = DecorativeInput;
 
 }(window.jQuery));

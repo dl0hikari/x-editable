@@ -84,7 +84,7 @@ Makes editable any HTML element on the page. Applied as jQuery method.
                     } else {
                         //when toggle='click' we should not close all other containers as they will be closed automatically in document click listener
 
-                        // delete type is contenteditable DOM  added by alex 2022.2.28
+                        // delete type is DecorativeInput DOM  added by alex 2022.2.28
                         jQuery('span.editable-container').siblings('.editable').show();
                         jQuery('span.editable-container').empty().remove();
                         // clear validateError value fixt by alex 2022.3.3
