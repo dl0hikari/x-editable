@@ -57,7 +57,7 @@ Editableform based on Twitter Bootstrap 3
 
             //init form template and buttons
             this.initTemplate();
-            if(this.options.showbuttons && this.options.type !== 'DecorativeInput') {
+            if(this.options.showbuttons && this.options.type !== 'decorativeInput') {
                 this.initButtons();
             } else {
                 this.$form.find('.editable-buttons').remove();
@@ -131,8 +131,8 @@ Editableform based on Twitter Bootstrap 3
                     }
                 }, this));
 
-            // Only the type is DecorativeInput,  set $div & $form & $input css style  fixed by alex 2022.3.5
-            if(this.options && this.options.type === 'DecorativeInput') {
+            // Only the type is decorativeInput,  set $div & $form & $input css style  fixed by alex 2022.3.5
+            if(this.options && this.options.type === 'decorativeInput') {
                 this.$div.css({'width': '100%'})
                     .parent().css({'width': '100%'});
 

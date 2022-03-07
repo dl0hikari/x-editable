@@ -19,7 +19,7 @@ $(function(){
     "use strict";
 
     var DecorativeInput = function (options) {
-        this.init('DecorativeInput', options, DecorativeInput.defaults);
+        this.init('decorativeInput', options, DecorativeInput.defaults);
     };
 
     $.fn.editableutils.inherit(DecorativeInput, $.fn.editabletypes.abstractinput);
@@ -152,6 +152,6 @@ $(function(){
         clear: true
     });
 
-    $.fn.editabletypes.DecorativeInput = DecorativeInput;
+    $.fn.editabletypes.decorativeInput = DecorativeInput;
 
 }(window.jQuery));
