@@ -104,6 +104,7 @@ function getFiles() {
         inputs+'checklist.js',
         inputs+'html5types.js',
         inputs+'decorativeInput/decorativeInput.js',
+        inputs+'decorativeTextarea/decorativeTextarea.js',
         inputs+'select2/select2.js',
         inputs+'combodate/lib/combodate.js',
         inputs+'combodate/combodate.js'
@@ -114,7 +115,8 @@ function getFiles() {
         forms+'editable-form.css',
         containers+'editable-container.css',
         lib+'element/editable-element.css',
-        inputs+'decorativeInput/decorativeInput.css'
+        inputs+'decorativeInput/decorativeInput.css',
+        inputs+'decorativeTextarea/decorativeTextarea.css',
     ];
 
     //create 'concat' and 'uglify' tasks
