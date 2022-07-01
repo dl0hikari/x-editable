@@ -34,14 +34,9 @@ $(function(){
 
             //enter do submit. shift + enter br edited by alex 2022.3.8
             this.$input.keydown(function (e) {
-                if(e.shiftKey && e.which === 13) {
-                    return;
-                }
-
-                if (e.which === 13) {
+                if(e.ctrlKey && e.which === 13) {
                     $(this).closest('form').submit();
                 }
-
             });
         },
 
